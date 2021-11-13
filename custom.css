@@ -1,15 +1,54 @@
+:root {
+    --theme-primary-color: #4584b5 !important;
+    --theme-text-color: rgba(0, 0, 0, .87) !important;
+    --theme-text-color-opaque: #000;
+    --theme-accent-text-color: #4584b5!important;
+    --theme-primary-color-lightened: #2DA2FF!important;
+    --theme-icon-focus-background: rgba(33, 150, 243, 0.2);
+    --theme-background: #F3F2F8;
+    --button-background: #EEEEF0;
+    --card-background: #F3F2F8;
+    --header-background: var(--theme-background);
+    --header-blur-background: rgba(255,255,255,.72);
+    --footer-background: #fff;
+    --footer-blur-background: var(--header-blur-background);
+    --theme-body-secondary-text-color: rgba(0, 0, 0, .6);
+    --line-background: rgba(0, 0, 0, .08);
+    --line-size: .12em;
+    --scrollbar-thumb-background: rgba(0,0,0,.3);
+    --drawer-background: #F3F2F8 ;
+    --docked-drawer-background: #F3F2F8 ;
+    --dialog-header-background: var(--footer-background);
+    --even-row-background: #f4f4f4;
+    --odd-row-background: var(--theme-background);
+    --epg-border-color: rgba(0,0,0,.05);
+    --epg-channel-color: #e0e0e0;
+    --epg-program-color: var(--button-background);
+}
+
 /*Inputs*/
 input:not([type]):focus:not([readonly]),
-input[type=text]:not(.browser-default):focus:not([readonly]),
+input[type=text]
+:not(.browser-default):focus
+:not([readonly]):not(.txtName)
+:not(#txtOriginalName)
+:not(#txtSortName)
+:not(#txtTagline),
+
 input[type=password]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=url]:not(.browser-default):focus:not([readonly]),
 input[type=time]:not(.browser-default):focus:not([readonly]),
-input[type=date]:not(.browser-default):focus:not([readonly]),
+input[type=date]:not(.browser-default):focus:not([readonly])
+:not(#txtDateAdded)
+:not(#txtPremiereDate)
+:not(#txtProductionYear),
 input[type=datetime]:not(.browser-default):focus:not([readonly]),
 input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
 input[type=tel]:not(.browser-default):focus:not([readonly]),
-input[type=number]:not(.browser-default):focus:not([readonly]),
+input[type=number]:not(.browser-default):focus:not([readonly])
+:not(#txtCommunityRating)
+:not(#txtCriticRating),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid var(--theme-primary-color);
@@ -22,7 +61,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 
 /* Remove default checkbox */
-
 [type="checkbox"]:not(:checked),
 [type="checkbox"]:checked {
   position: absolute;
@@ -111,35 +149,45 @@ background: none;
 }
 
 
-:root {
-    --theme-primary-color: #4584b5;
-    --theme-text-color: rgba(0, 0, 0, .87);
-    --theme-text-color-opaque: #000;
-    --theme-accent-text-color: #4584b5;
-    --theme-primary-color-lightened: #2DA2FF;
-    --theme-icon-focus-background: rgba(33, 150, 243, 0.2);
-    --theme-background: #F3F2F8;
-    --button-background: #EEEEF0;
-    --card-background: #F3F2F8;
-    --header-background: var(--theme-background);
-    --header-blur-background: rgba(255,255,255,.72);
-    --footer-background: #fff;
-    --footer-blur-background: var(--header-blur-background);
-    --theme-body-secondary-text-color: rgba(0, 0, 0, .6);
-    --line-background: rgba(0, 0, 0, .08);
-    --line-size: .12em;
-    --scrollbar-thumb-background: rgba(0,0,0,.3);
-    --drawer-background: #F3F2F8;
-    --docked-drawer-background: #F3F2F8;
-    --dialog-header-background: var(--footer-background);
-    --even-row-background: #f4f4f4;
-    --odd-row-background: var(--theme-background);
-    --epg-border-color: rgba(0,0,0,.05);
-    --epg-channel-color: #e0e0e0;
-    --epg-program-color: var(--button-background);
-}
 
-.emby-select-withcolor, .emby-input {
+
+
+.emby-select-withcolor
+:not(.selectSubtitles)
+:not(.selectVideo)
+:not(.selectAudio)
+:not(.selectSource)
+:not(#selectMetadataRefreshMode)
+:not(#selectImageProvider)
+:not(.selectImageType)
+:not(.selectLanguage)
+:not(#selectOfficialRating)
+:not(#selectCustomRating)
+:not(#select3dFormat)
+:not(#selectLanguage)
+:not(#selectStatus)
+:not(#txtIndexNumber)
+:not(#selectCountry)
+:not(#selectDisplayOrder), 
+
+.emby-input
+:not(.txtName)
+:not(#txtOriginalName)
+:not(#txtParentIndexNumber)
+:not(#txtSortName):not(#txtTagline)
+:not(#txtDateAdded)
+:not(#txtPremiereDate)
+:not(#txtProductionYear)
+:not(#txtCommunityRating)
+:not(#txtCriticRating)
+:not(.txtExternalId)
+:not(#txtEndDate)
+:not(.txtExternalId)
+:not(#txtLookupName)
+:not(#txtLookupYear)
+:not(.txtLookupId )
+:not(.txtLookupId )
+:not(#txtSeriesRuntime) {
     color: inherit;
     background: #F3F2F8 !important;
     border:none !important;
@@ -206,14 +254,17 @@ body > div.mainAnimatedPages.skinBody.skinBody-withFullDrawer > div > div > div.
             .emby-select {
             font-weight:lighter !important;
             }
-            @media(min-width: 50em) .cardBox {
+            @media(min-width: 50em){ 
+            .cardBox {
                 margin: 1.68em !important;
             }
-            
-            @media(min-width: 50em) .skinHeader-withfulldrawer .pageTitle {
-                margin-left: 2em;
             }
             
+            @media(min-width: 50em) {
+                .skinHeader-withfulldrawer .pageTitle {
+                margin-left: 2em;
+                }
+            }
             
             .paperList,
             .activeDevices > .card > .cardBox {
