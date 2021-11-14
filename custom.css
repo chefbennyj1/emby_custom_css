@@ -211,7 +211,20 @@ background: none;
 
 .mainDrawer.drawer-docked .emby-collapsible-button-collapsed { border-width: 0!important; }
 
-
+.mainAnimatedPages {
+    left: 105px !important;
+    position:absolute !important;
+    transition: transform 0.2s 0.2s ease-out;
+}
+.mainDrawer.drawer-docked:hover ~ .mainAnimatedPages {
+    -webkit-transform: translateX(200px) !important;
+            transform: translateX(200px) !important;
+    -webkit-transition: -webkit-transform 0.2s ease-out;
+    transition: -webkit-transform 0.2s 0.2s ease-out;
+    transition: transform 0.2s 0.2s ease-out;
+    transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
+    width: 90%;
+}
 
 
 body > div.mainAnimatedPages.skinBody.skinBody-withFullDrawer > div > div > div.dashboardSections > div.dashboardColumn.dashboardColumn-2-60.dashboardColumn-3-46 > div:nth-child(1) > div.paperList > a {
@@ -233,7 +246,7 @@ body > div.mainAnimatedPages.skinBody.skinBody-withFullDrawer > div > div > div.
             
             hr {
               height: 1px;  
-              background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(0, 0, 0, 0)), color-stop(0.5, #333333), to(rgba(0, 0, 0, 0)));
+              /* background: -webkit-gradient(linear, 0 0, 100% 0, from(rgba(0, 0, 0, 0)), color-stop(0.5, #333333), to(rgba(0, 0, 0, 0))); */
               background: -webkit-linear-gradient(left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
               background: -moz-linear-gradient(left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
               background: -o-linear-gradient(left, rgba(0, 0, 0, 0), #333333, rgba(0, 0, 0, 0));
@@ -244,7 +257,7 @@ body > div.mainAnimatedPages.skinBody.skinBody-withFullDrawer > div > div > div.
               display: block;
               content: '';
               height: 30px;
-              background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 116, color-stop(0%, #cccccc), color-stop(100%, rgba(255, 255, 255, 0)));
+              /* background-image: -webkit-gradient(radial, 50% 0%, 0, 50% 0%, 116, color-stop(0%, #cccccc), color-stop(100%, rgba(255, 255, 255, 0))); */
               background-image: -webkit-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
               background-image: -moz-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
               background-image: -o-radial-gradient(center top, farthest-side, #cccccc 0%, rgba(255, 255, 255, 0) 100%);
