@@ -196,6 +196,9 @@ background: none;
 }
 .listItemImageContainer.itemAction.listItemImageContainer-square.listItemImageContainer-round.defaultCardBackground defaultCardBackground0 { background-color:transparent !important;color:#fff !important; aspect-ratio:1 }
 
+.mainDrawer:not(.drawer-docked){
+    color: white !important;
+}
 
 .mainDrawer.drawer-docked { width: 5.5em; padding: 1em 1.1em 1em; transition: 0.2s; transition-delay: 0.2s; -webkit-backdrop-filter: saturate(1.5) blur(4em); backdrop-filter: saturate(1.5) blur(4em); }
 .mainDrawer.drawer-docked:hover { width: 20em; }
