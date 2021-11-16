@@ -61,18 +61,18 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 
 /* Remove default checkbox */
-[type="checkbox"]:not(:checked),
-[type="checkbox"]:checked {
+[type="checkbox"]:not(:checked):not(.emby-toggle),
+[type="checkbox"]:not(.emby-toggle):checked {
   position: absolute;
   opacity: 0;
   pointer-events: none;
 }
 
-[type="checkbox"] {
+[type="checkbox"]:not(.emby-toggle) {
   /* checkbox aspect */
 }
 
-[type="checkbox"] + span:not(.lever) {
+[type="checkbox"]:not(.emby-toggle) + span:not(.lever) {
   position: relative;
   padding-left: 35px;
   cursor: pointer;
@@ -86,8 +86,8 @@ textarea.materialize-textarea:focus:not([readonly]) {
           user-select: none;
 }
 
-[type="checkbox"] + span:not(.lever):before,
-[type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+[type="checkbox"]:not(.emby-toggle) + span:not(.lever):before,
+[type="checkbox"]:not(.filled-in):not(.emby-toggle) + span:not(.lever):after {
   content: '';
   position: absolute;
   top: 0;
@@ -102,18 +102,18 @@ textarea.materialize-textarea:focus:not([readonly]) {
   transition: .2s;
 }
 
-[type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+[type="checkbox"]:not(.filled-in):not(.emby-toggle) + span:not(.lever):after {
   border: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 
-[type="checkbox"]:not(:checked):disabled + span:not(.lever):before {
+[type="checkbox"]:not(.emby-toggle):not(:checked):disabled + span:not(.lever):before {
   border: none;
   background-color: rgba(0, 0, 0, 0.42);
 }
 
-[type="checkbox"].tabbed:focus + span:not(.lever):after {
+[type="checkbox"]:not(.emby-toggle).tabbed:focus + span:not(.lever):after {
   -webkit-transform: scale(1);
           transform: scale(1);
   border: 0;
@@ -123,7 +123,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-[type="checkbox"]:checked + span:not(.lever):before {
+[type="checkbox"]:not(.emby-toggle):checked + span:not(.lever):before {
   top: -4px;
   left: -5px;
   width: 9px;
@@ -143,7 +143,7 @@ background: none;
   transition: all 0.2s ease-out;
 }
 
-[type="checkbox"]:checked:disabled + span:before {
+[type="checkbox"]:not(.emby-toggle):checked:disabled + span:before {
   border-right: 2px solid rgba(0, 0, 0, 0.42);
   border-bottom: 2px solid rgba(0, 0, 0, 0.42);
 }
