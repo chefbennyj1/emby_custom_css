@@ -1,9 +1,9 @@
 :root {
     --theme-primary-color: #4584b5 !important;
-    --theme-text-color: rgba(0, 0, 0, .87) !important;
+    --theme-text-color: rgba(0, 0, 0, .87);
     --theme-text-color-opaque: #000;
     --theme-accent-text-color: #4584b5!important;
-    --theme-primary-color-lightened: #2DA2FF!important;
+    --theme-primary-color-lightened: #4584b5!important;
     --theme-icon-focus-background: rgba(33, 150, 243, 0.2);
     --theme-background: #F3F2F8;
     --button-background: #EEEEF0;
@@ -28,35 +28,27 @@
 
 /*Inputs*/
 input:not([type]):focus:not([readonly]),
-input[type=text]
-:not(.browser-default):focus
-:not([readonly]):not(.txtName)
-:not(#txtOriginalName)
-:not(#txtSortName)
-:not(#txtTagline),
-
+input[type=text]:not(.browser-default):focus:not([readonly]),
 input[type=password]:not(.browser-default):focus:not([readonly]),
 input[type=email]:not(.browser-default):focus:not([readonly]),
 input[type=url]:not(.browser-default):focus:not([readonly]),
 input[type=time]:not(.browser-default):focus:not([readonly]),
-input[type=date]:not(.browser-default):focus:not([readonly])
-:not(#txtDateAdded)
-:not(#txtPremiereDate)
-:not(#txtProductionYear),
+input[type=date]:not(.browser-default):focus:not([readonly]),
 input[type=datetime]:not(.browser-default):focus:not([readonly]),
 input[type=datetime-local]:not(.browser-default):focus:not([readonly]),
 input[type=tel]:not(.browser-default):focus:not([readonly]),
-input[type=number]:not(.browser-default):focus:not([readonly])
-:not(#txtCommunityRating)
-:not(#txtCriticRating),
+input[type=number]:not(.browser-default):focus:not([readonly]),
 input[type=search]:not(.browser-default):focus:not([readonly]),
 textarea.materialize-textarea:focus:not([readonly]) {
-  border-bottom: 1px solid var(--theme-primary-color);
-  -webkit-box-shadow: 0 1px 0 0 var(--theme-primary-color);
-          box-shadow: 0 1px 0 0 var(--theme-primary-color);
- -webkit-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
+    border: none !important;
+    border-radius: 0 !important;
+    border-bottom: var(--line-size) solid var(--theme-primary-color) !important;
+    -webkit-box-shadow: 0 1px 0 0 var(--theme-primary-color) !important;
+    box-shadow: 0 1px 0 0 var(--theme-primary-color) !important;
+    -webkit-transition: all 0.5s ease-out !important;
+    transition: all 0.5s ease-out !important;
 }
+
 
 
 
@@ -124,23 +116,23 @@ textarea.materialize-textarea:focus:not([readonly]) {
 }
 
 [type="checkbox"]:not(.emby-toggle):checked + span:not(.lever):before {
-  top: -4px;
-  left: -5px;
-  width: 9px;
-  height: 19px;
-  border-top: 2px solid transparent;
-  border-left: 2px solid transparent;
-  border-right: 2px solid var(--theme-primary-color);
-  border-bottom: 2px solid var(--theme-primary-color);
-  -webkit-transform: rotate(40deg);
-          transform: rotate(40deg);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-transform-origin: 100% 100%;
-          transform-origin: 100% 100%;
-background: none;
- -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+    top: -4px;
+    left: -5px;
+    width: 9px;
+    height: 19px;
+    border-top: 2px solid transparent;
+    border-left: 2px solid transparent;
+    border-right: 2px solid var(--theme-primary-color);
+    border-bottom: 2px solid var(--theme-primary-color);
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+    background: none;
+    -webkit-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
 }
 
 [type="checkbox"]:not(.emby-toggle):checked:disabled + span:before {
@@ -152,48 +144,27 @@ background: none;
 
 
 
-.emby-select-withcolor
-:not(.selectSubtitles)
-:not(.selectVideo)
-:not(.selectAudio)
-:not(.selectSource)
-:not(#selectMetadataRefreshMode)
-:not(#selectImageProvider)
-:not(.selectImageType)
-:not(.selectLanguage)
-:not(#selectOfficialRating)
-:not(#selectCustomRating)
-:not(#select3dFormat)
-:not(#selectLanguage)
-:not(#selectStatus)
-:not(#txtIndexNumber)
-:not(#selectCountry)
-:not(#selectDisplayOrder), 
+.emby-select-withcolor:not(.editItemMetadataForm  *):not(.trackSelections  *){
 
-.emby-input
-:not(.txtName)
-:not(#txtOriginalName)
-:not(#txtParentIndexNumber)
-:not(#txtSortName):not(#txtTagline)
-:not(#txtDateAdded)
-:not(#txtPremiereDate)
-:not(#txtProductionYear)
-:not(#txtCommunityRating)
-:not(#txtCriticRating)
-:not(.txtExternalId)
-:not(#txtEndDate)
-:not(.txtExternalId)
-:not(#txtLookupName)
-:not(#txtLookupYear)
-:not(.txtLookupId )
-:not(.txtLookupId )
-:not(#txtSeriesRuntime) {
     color: inherit;
-    background: #F3F2F8 !important;
+    background: #F7F7F9 !important;
+    border:none !important;
+    border-bottom: var(--line-size)  solid rgba(0,0,0,0.25) !important;
+    border-radius: 0 !important;
+    
+}
+
+.emby-input:not(.editItemMetadataForm  *){
+
+
+    color: inherit;
+    background: #F7F7F9 !important;
     border:none !important;
     border-bottom: 1px  solid rgba(0,0,0,0.25) !important;
-    border-radius: 0;
+    border-radius: 0 !important;
+
 }
+
 .listItemImageContainer.itemAction.listItemImageContainer-square.listItemImageContainer-round.defaultCardBackground defaultCardBackground0 { background-color:transparent !important;color:#fff !important; aspect-ratio:1 }
 
 .mainDrawer:not(.drawer-docked){
@@ -301,7 +272,7 @@ body > div.mainAnimatedPages.skinBody.skinBody-withFullDrawer > div > div > div.
             }
             
             .fab {
-                background(0, 0, 0, 0.15) !important;
+                background: (0, 0, 0, 0.15) !important;
             }
             
             #dashboardGeneralPage {
