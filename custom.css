@@ -144,7 +144,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 
 
 
-.emby-select-withcolor:not(.editItemMetadataForm  *):not(.trackSelections  *){
+.emby-select-withcolor:not(.editItemMetadataForm  *):not(.trackSelections  *):not(.popupIdentifyForm *):not(.subtitleEditorDialog *){
 
     color: inherit;
     background: #F7F7F9 !important;
@@ -154,7 +154,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     
 }
 
-.emby-input:not(.editItemMetadataForm  *){
+.emby-input:not(.editItemMetadataForm  *):not(.popupIdentifyForm *):not(.subtitleEditorDialog *){
 
 
     color: inherit;
