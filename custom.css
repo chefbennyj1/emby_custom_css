@@ -382,7 +382,7 @@ h2.upNextDialog-nextVideoText {
 
 .mainDrawer.drawer-docked .emby-collapsible-button-collapsed { border-width: 0!important; }
 
-.mainAnimatedPages {
+.mainAnimatedPages.skinBody-withFullDrawer {
     left: 105px !important;
     position:absolute !important;
     transition: transform 0.2s 0.2s ease-out;
