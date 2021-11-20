@@ -26,6 +26,17 @@
     --epg-program-color: var(--button-background);
 }
 
+.diskCardBox {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    /* box-shadow: 1px 1px 10px rgb(0 0 0 / 50%) !important; */
+}
+
+
 /*Inputs*/
 input:not([type]):focus:not([readonly]),
 input[type=text]:not(.browser-default):focus:not([readonly]),
@@ -150,7 +161,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
     
 }
 
-.emby-input:not(.editItemMetadataForm  *):not(.popupIdentifyForm *):not(.subtitleEditorDialog *){
+.emby-input:not(.editItemMetadataForm  *):not(.popupIdentifyForm *):not(.subtitleEditorDialog *):not(.txtUserName):not(.txtPassword) {
 
     color: inherit;
     background: #F7F7F9 !important;
@@ -175,6 +186,7 @@ textarea.materialize-textarea:focus:not([readonly]) {
 .videoOsdBottom .videoOsdPositionText, .videoOsdBottom .videoOsdDurationText { font-weight: bold; }
 .videoOsdBottom .videoOsd-endsAtText { display:none; color: #fff; font-weight: 500; }
 .videoOsdBottom .videoOsdVolumeSliderWrapper { top: -1em; }
+
 .videoOsdBottom-video {
     -webkit-transition: opacity .1s ease-in-out!important;
     -o-transition: opacity .1s ease-in-out!important;
@@ -185,7 +197,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
     background: linear-gradient(rgba(0,0,0,0),rgb(0 0 0 / 95%))!important;
 }
 .videoOsdBottom .videoOsdPositionContainer.videoOsd-customFont { order: 1; margin-bottom: 20px; }
-
 
 .videoOsdBottom-video {
 
@@ -382,20 +393,23 @@ h2.upNextDialog-nextVideoText {
 
 .mainDrawer.drawer-docked .emby-collapsible-button-collapsed { border-width: 0!important; }
 
-.mainAnimatedPages.skinBody-withFullDrawer {
-    left: 105px !important;
-    position:absolute !important;
-    transition: transform 0.2s 0.2s ease-out;
+@media (min-width: 500px) {
+    .mainAnimatedPages.skinBody-withFullDrawer {
+        left: 105px !important;
+        position:absolute !important;
+        transition: transform 0.2s 0.2s ease-out;
+    }
+    .mainDrawer.drawer-docked:hover ~ .mainAnimatedPages {
+        -webkit-transform: translateX(200px) !important;
+                transform: translateX(200px) !important;
+        -webkit-transition: -webkit-transform 0.2s ease-out;
+        transition: -webkit-transform 0.2s 0.2s ease-out;
+        transition: transform 0.2s 0.2s ease-out;
+        transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
+        width: 90%;
+    }
 }
-.mainDrawer.drawer-docked:hover ~ .mainAnimatedPages {
-    -webkit-transform: translateX(200px) !important;
-            transform: translateX(200px) !important;
-    -webkit-transition: -webkit-transform 0.2s ease-out;
-    transition: -webkit-transform 0.2s 0.2s ease-out;
-    transition: transform 0.2s 0.2s ease-out;
-    transition: transform 0.2s 0.2s ease-out, -webkit-transform 0.2s 0.2s ease-out;
-    width: 90%;
-}
+
 
 
 body > div.mainAnimatedPages.skinBody.skinBody-withFullDrawer > div > div > div.dashboardSections > div.dashboardColumn.dashboardColumn-2-60.dashboardColumn-3-46 > div:nth-child(1) > div.paperList > a {
